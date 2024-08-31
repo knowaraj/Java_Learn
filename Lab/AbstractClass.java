@@ -2,10 +2,6 @@ package Lab;
 
 abstract class Animal{
     public abstract void eat ();
-    public void sleep()
-    {
-        System.out.println("Animal sleep");
-    }
 }
 class Dog extends  Animal{
     public void eat ()
@@ -26,7 +22,6 @@ public class AbstractClass{
         obj.eat();
         obj= new Dog();
         obj.eat();
-
     }
 
 }
