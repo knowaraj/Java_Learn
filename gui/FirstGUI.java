@@ -16,7 +16,7 @@ public class FirstGUI extends JFrame{
         add(label1);
         add(label2);
         add(label3);
-        setSize(400, 400);
+        setSize(600, 600);
         setVisible(true);
     }
 
