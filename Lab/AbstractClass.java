@@ -16,9 +16,10 @@ class Dog extends  Animal{
 class Elephant extends  Animal{
     public void eat ()
     {
-        System.out.println("Elephant eats  ");
+        System.out.println("Elephant eats ");
     }
 }
+
 public class AbstractClass{
     public static void main (String [] args){
         Animal obj= new Elephant();
