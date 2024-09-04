@@ -5,9 +5,8 @@ public class MixedUI extends JFrame {
     MixedUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("All in one");
-        setSize(900,900);
-        setVisible(true);
-        setLayout(new FlowLayout());
+
+        setLayout(new GridLayout(5,2));
         JLabel l = new JLabel("Label Here");
         ImageIcon i = new ImageIcon("user.png");
         JLabel l1 = new JLabel(i);
@@ -30,10 +29,12 @@ public class MixedUI extends JFrame {
         add(rb1);
         add(rb2);
         add(l);
-        add(l1);
+//        add(l1);
         add(textf);
         add(textarea);
         add(pass);
+        setSize(900,900);
+        setVisible(true);
 
     }
 
