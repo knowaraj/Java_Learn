@@ -37,6 +37,9 @@ public class SumClear extends JFrame implements ActionListener{
             tf3.setText(String.valueOf(sum));
         } else {
             tf3.setText("");
+            tf2.setText("");
+            tf1.setText("");
+
         }
     }
 }
