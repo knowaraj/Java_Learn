@@ -153,10 +153,7 @@ public class Form extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        // Get selected account type
         String accountType = pacc.isSelected() ? "Personal Account" : "Business Account";
-
-        // Get input from text fields
         String firstName = fnamea.getText();
         String lastName = lnamea.getText();
         String streetAddress1 = street1.getText();
@@ -166,8 +163,6 @@ public class Form extends JFrame implements ActionListener {
         String stateProvince = (String) provinces.getSelectedItem();
         String postalCode = zip.getText();
         String phoneNumber = phonefield.getText();
-
-        // Display information in the info text area
         info.setText("Account Type: " + accountType + "\n"
                 + "First Name: " + firstName + "\n"
                 + "Last Name: " + lastName + "\n"
