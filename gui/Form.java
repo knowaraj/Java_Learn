@@ -129,7 +129,7 @@ public class Form extends JFrame implements ActionListener {
 
         // Info text area
         info = new JTextArea(10, 30);
-        info.setEditable(false);
+        info.setVisible(false);
         gbc.gridx = 1;
         gbc.gridy = 12;
         gbc.fill = GridBagConstraints.BOTH;
@@ -140,6 +140,8 @@ public class Form extends JFrame implements ActionListener {
         gbc.gridx = 1;
         gbc.gridy = 10;
         panel.add(submit, gbc);
+
+
         submit.addActionListener(this);
 
         add(panel);
@@ -153,16 +155,29 @@ public class Form extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        String accountType = pacc.isSelected() ? "Personal Account" : "Business Account";
+
+        String accountType = "";
+        if(pacc.isSelected()) {
+            accountType = "Personal Account";
+        }
+        if(bacc.isSelected()) {
+            accountType = "Business Account";
+        }
+
+
         String firstName = fnamea.getText();
         String lastName = lnamea.getText();
         String streetAddress1 = street1.getText();
         String streetAddress2 = street2.getText();
         String city = cityfield.getText();
+
         String selectedCountry = (String) countries.getSelectedItem();
         String stateProvince = (String) provinces.getSelectedItem();
+
+
         String postalCode = zip.getText();
         String phoneNumber = phonefield.getText();
+
         info.setText("Account Type: " + accountType + "\n"
                 + "First Name: " + firstName + "\n"
                 + "Last Name: " + lastName + "\n"
@@ -173,5 +188,6 @@ public class Form extends JFrame implements ActionListener {
                 + "State/Province: " + stateProvince + "\n"
                 + "Postal Code: " + postalCode + "\n"
                 + "Phone Number: " + phoneNumber + "\n");
+        info.setVisible(true);
     }
 }
