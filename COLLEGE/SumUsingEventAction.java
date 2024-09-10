@@ -1,41 +1,44 @@
 package COLLEGE;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
-public class SumUsingEventAction extends JFrame {
+public class SumUsingEventAction extends JFrame{
+    JTextField tf1 , tf2, tf3;
+    JButton jb;
     SumUsingEventAction(){
         setLayout(new FlowLayout());
-        JTextField tf1 = new JTextField(10);
-        JTextField tf2 = new JTextField(10);
-        JTextField tf3 = new JTextField(10);
-        JLabel label = new JLabel();
-        JButton jb = new JButton("sum");
-        jb.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String a = tf1.getText();
-                Integer num1 = Integer.valueOf(a);
+         tf1 = new JTextField(10);
+         tf2 = new JTextField(10);
+         tf3 = new JTextField(10);
+         jb = new JButton("sum");
 
-                String b = tf2.getText();
-                Integer num2 = Integer.valueOf(b);
-
-                Integer num3 = num1+num2;
-                String c = String.valueOf(num3);
-                label.setText(" The sum is "+ c);
-            }
-        });
         add(tf1);
         add(tf2);
-        add(tf3);
         add(jb);
-        add(label);
+        add(tf3);
+        jb.addKeyListener(new EventHandler(this));
         setSize(200,200);
         setVisible(true);
     }
 
     public static void main(String[] args) {
         new SumUsingEventAction();
+    }
+
+}
+
+class EventHandler extends KeyAdapter{
+
+    SumUsingEventAction obj;
+
+    public EventHandler(SumUsingEventAction obj) {
+        this.obj = obj;
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        int text = Integer.valueOf(obj.tf1.getText()) + Integer.valueOf(obj.tf2.getText());
+        obj.tf3.setText(String.valueOf(text));
     }
 }
