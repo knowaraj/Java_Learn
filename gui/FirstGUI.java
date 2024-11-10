@@ -13,6 +13,9 @@ public class FirstGUI extends JFrame{
         JLabel label1 = new JLabel("First");
         JLabel label2 = new JLabel("Second");
         JLabel label3 = new JLabel(icon);
+        JTextField tf = new JTextField("test");
+        tf.setForeground(Color.RED);
+        add(tf);
         add(label1);
         add(label2);
         add(label3);

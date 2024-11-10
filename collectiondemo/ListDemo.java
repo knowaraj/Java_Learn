@@ -1,9 +1,12 @@
-package collectiondemo;
+package src.collectiondemo;
 
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 public class ListDemo {
+
     public static void main(String[] args) {
+        
         Set<String> myList = new LinkedHashSet<>();
         myList.add("apple");
         myList.add("ball");

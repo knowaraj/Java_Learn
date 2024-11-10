@@ -1,4 +1,4 @@
-package COLLEGE;
+package src.COLLEGE;
 
 class Car{
     String color;
